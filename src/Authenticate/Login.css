@@ -1,0 +1,65 @@
+.outer-input-field {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    text-align: left;
+  }
+  
+  .input-field label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  
+  
+  .input-field input {
+    font: inherit;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 40rem;
+    max-width: 90%;
+  }
+  
+  .log-in-button {
+    text-align: left;
+  }
+  .outer-div {
+    background-color: #2c0d00;
+    padding: 1rem;
+    margin: 5rem auto;
+    width: 50rem;
+    max-width: 95%;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+  }
+  
+  .log-in-button button {
+    font: inherit;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    border: 1px solid #4d1601;
+    background-color: #4d1601;
+    color: white;
+    border-radius: 12px;
+    margin-right: 1rem;
+  }
+  
+  .log-in-button button:hover,
+  .log-in-button button:active {
+    background-color: #2c0d00;
+    border-color: #2c0d00;
+  }
+  
+  .log-in-button button.alternative {
+    color: #2c0d00;
+    border-color: transparent;
+    background-color: transparent;
+  }
+  
+  .log-in-button button.alternative:hover,
+  .log-in-button button.alternative:active {
+    background-color: #ddb3f8;
+  }
