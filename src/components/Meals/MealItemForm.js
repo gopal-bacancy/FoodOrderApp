@@ -1,11 +1,12 @@
 import classes from "./MealItemForm.module.css";
 import Input from "../UI/Input";
 import { useState, useRef } from "react";
-import Alert from "../../Authenticate/Alert";
+
 const MealItemForm = (props) => {
   const [amountIsValid, setAmountIsValid] = useState(true);
 
   const amountInputRef = useRef();
+
   const submitHandler = (event) => {
     event.preventDefault();
     if (localStorage.getItem("userid")) {
@@ -23,6 +24,7 @@ const MealItemForm = (props) => {
       props.onAddToCart(enteredAmountNumber);
     } else props.onAlert();
   };
+
   return (
     <div>
       <form className={classes.form} onSubmit={submitHandler}>

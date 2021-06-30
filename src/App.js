@@ -6,41 +6,51 @@ import CartProvider from "./store/CartProvider";
 import OrderCart from "./components/Cart/OrderCart";
 import Axios from "axios";
 import Alert from "./Authenticate/Alert";
+
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
   const [OrderCartIsShown, setOrderCartIsShown] = useState(false);
   const [orderedItems, setOrderedItems] = useState([]);
   const [showAlert, setShowAlert] = useState(false);
   const [alertMessage, setAlertMessage] = useState("");
+
   const showCartHandler = () => {
     setCartIsShown(true);
   };
+
   const hideOrderedCartHandler = () => {
     setOrderCartIsShown(false);
   };
+
   const onClose = () => {
     setShowAlert(false);
   };
+
   const afterLoginHandler = () => {
     setShowAlert(true);
     setAlertMessage("Logged In successfully");
   };
+
   const afterSignupHandler = () => {
     setShowAlert(true);
     setAlertMessage("Account created successfully");
   };
+
   const afterLogoutHandler = () => {
     setShowAlert(true);
     setAlertMessage("Logged out successfully");
   };
+
   const hideCartHandler1 = () => {
     setCartIsShown(false);
   };
+
   const hideCartHandler = () => {
     setCartIsShown(false);
     setShowAlert(true);
     setAlertMessage("Order Submitted");
   };
+
   const showOrders = () => {
     Axios.post("http://localhost:3000/orderedItems", {
       userid: localStorage.getItem("userid"),

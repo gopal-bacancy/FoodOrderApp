@@ -38,6 +38,7 @@ const AvailableMeals = () => {
       name={meal.name}
     />
   ));
+
   return (
     <section className={classes.meals}>
       <Card>

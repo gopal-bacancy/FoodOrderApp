@@ -2,18 +2,18 @@ import React, { useState } from "react";
 import "./Login.css";
 import Modal from "../components/UI/Modal";
 import Axios from "axios";
-import Alert from "./Alert";
+
 const Login = (props) => {
   const [enteredUserName, setEnterdeUserName] = useState("");
   const [enteredPassword, setEnterdePassword] = useState("");
 
-  function userNameChangeHandler(event) {
+  const userNameChangeHandler = (event) => {
     setEnterdeUserName(event.target.value);
   }
 
-  function passwordChangeHandler(event) {
+  const passwordChangeHandler = (event) => {
     setEnterdePassword(event.target.value);
-  }
+  };
 
   const submitHandler = (event) => {
     event.preventDefault();
@@ -76,4 +76,5 @@ const Login = (props) => {
     </Modal>
   );
 };
+
 export default Login;

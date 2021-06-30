@@ -4,16 +4,20 @@ import CartContext from "../../store/cart-context";
 import Axios from "axios";
 import { useContext, useState } from "react";
 import Alert from "../../Authenticate/Alert";
+
 const MealItem = (props) => {
   const cartCtx = useContext(CartContext);
   const price = `$${props.price.toFixed(2)}`;
   const [showalert, setShowAlert] = useState(false);
+
   const showAlertHandler = () => {
     setShowAlert(true);
   };
+
   const onClose = () => {
     setShowAlert(false);
   };
+
   const addToCartHandler = (amount) => {
     cartCtx.addItem({
       id: props.id,
@@ -21,17 +25,17 @@ const MealItem = (props) => {
       amount: amount,
       price: props.price,
     });
-    const data={
+
+    const data = {
       userid: localStorage.getItem("userid"),
       name: props.name,
       amount: amount,
       price: props.price,
-    }
+    };
+
     Axios.post("http://localhost:3000/addToCartItems", {
-      data
-    }).then((response) => {
-      
-    });
+      data,
+    }).then((response) => {});
   };
 
   return (
@@ -58,4 +62,5 @@ const MealItem = (props) => {
     </div>
   );
 };
+
 export default MealItem;
